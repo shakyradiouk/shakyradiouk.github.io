@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<body>
+    <div id="app">
+      <button id="btn">Play Radio</button>
+      <button id="btn2">Pause Radio</button>
+    </div>
+
+    <script src="src/index.js"></script>
+
+</body>
+</html>
+<!-- By Educaty Tutorials -->
+
+<html>
+  <head>
+    <title>My dark mode switch</title>
+    <style>
+          body{
+           transition: .182s;
+          }
+          body.dark{
+            background-color: #212121;
+            color: #e8e8e8;
+          }
+    </style>
+  </head>
+  <body>
+
+    <h2>Click the play button above to start streaming Shake Radio</h2>
+    <button onclick="enableDarkMode()">Dark Mode</button>
+    <button onclick="enableLightMode()">Light Mode</button>
+    
+    <script>
+      checkDarkMode();
+
+      function enableLightMode(){
+        document.body.classList.remove("dark");
+        localStorage.darkMode = false;
+      }
+      function enableDarkMode(){
+        document.body.classList.add("dark");
+        localStorage.darkMode = true;
+      }
+      function checkDarkMode(){
+        if(localStorage.darkMode){
+          document.body.classList.add("dark");
+        }
+        else{
+          document.body.classList.remove("dark");
+        }
+      }
+    </script>
+  </body>
+</html>
+<script>
+const btn = document.getElementById("btn");
+const audio = new Audio(
+    "http://stream.zeno.fm/1rdjv2jude9vv"
+  );
+
+btn.onclick = () => {
+  audio.play();
+};
+
+btn2.onclick = () => {
+	audio.pause();
+};
+</script>
