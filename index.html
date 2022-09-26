@@ -15,7 +15,7 @@
 
 <html>
   <head>
-    <title>Shaky Radio UK</title>
+    <title>My dark mode switch</title>
     <style>
           body{
            transition: .182s;
@@ -27,7 +27,8 @@
     </style>
   </head>
   <body>
-
+	<h4>Volume Slider Is Below.</h4>
+	<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
     <h2>Click the play button above to start streaming Shake Radio</h2>
     <button onclick="enableDarkMode()">Dark Mode</button>
     <button onclick="enableLightMode()">Light Mode</button>
@@ -55,6 +56,7 @@
   </body>
 </html>
 <script>
+
 const btn = document.getElementById("btn");
 const audio = new Audio(
     "http://stream.zeno.fm/1rdjv2jude9vv"
@@ -65,6 +67,29 @@ btn.onclick = () => {
 };
 
 btn2.onclick = () => {
-	audio.pause();
+	audio.stop();
 };
+
+const body = document.querySelector("body");
+body.addEventListener("keypress", runEvent);
+
+
+let globalVolume = 1;
+window.SetVolume = function(val) {
+  console.log("Before: " + audio.volume);
+  audio.volume = val / 100;
+  globalVolume = audio.volume;
+  console.log("After: " + audio.volume);
+};
+function runEvent(e) {
+  const keyName = event.key;
+  const note = document.querySelector(`[data-sound-id="${keyName}"]`).play();
+
+  // alert("keypress event\n\n" + "key: " + keyName);
+  console.log(`EVENT TYPE: ${e.type}`);
+  console.log(e.target.value);
+  console.log(keyName);
+  heading.value = "";
+  heading.innerText = keyName;
+}
 </script>
