@@ -112,10 +112,11 @@
   </body>
 </html>
 <script>
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open( "GET", "https://superiorvitalhashmap.trobinson5.repl.co/txt", true ); // false for synchronous request
-xmlHttp.send();
-document.getElementById("myspan").textContent=xmlHttp.responseText;
+fetch("https://superiorvitalhashmap.trobinson5.repl.co/txt")
+  .then(function (response) {
+	console.log("got announcent")
+  })
+document.getElementById("myspan").textContent=response.text();
 const btn = document.getElementById("btn");
 const audio = new Audio(
     "http://stream.zeno.fm/8qumo8130edtv"
