@@ -114,7 +114,8 @@
 <script>
 fetch("https://superiorvitalhashmap.trobinson5.repl.co/txt")
   .then(function (response) {
-	let responseText = response.text()["PromiseResult"];
+	let responseText = response.text();
+	responseText = responseText + 2
 	document.getElementById("myspan").textContent=responseText;
 	console.log("got announcent")
 	console.log(responseText)
