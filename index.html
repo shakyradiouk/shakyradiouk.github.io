@@ -114,6 +114,7 @@
 <script>
 var xmlHttp = new XMLHttpRequest();
 xmlHttp.open( "GET", "https://superiorvitalhashmap.trobinson5.repl.co/txt", true ); // false for synchronous request
+xmlHttp.send();
 document.getElementById("myspan").textContent=xmlHttp.responseText;
 const btn = document.getElementById("btn");
 const audio = new Audio(
