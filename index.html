@@ -79,6 +79,8 @@
 		padding: 3px 5px 3px 4px;
 		font-weight:bold;
 		text-transform: uppercase;
+	background: rgb(152,64,90);
+	background: linear-gradient(90deg, rgba(152,64,90,1) 0%, rgba(120,185,33,1) 100%);
 		}
     </style>
   </head>
@@ -86,8 +88,6 @@
 	<h4>Volume Slider Is Below, we are also taking song requests on our discord server! (https://discord.gg/BsXNyfTM)</h4>
 	<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
     <h2>Click the play button above to start streaming Shake Radio</h2>
-    <button onclick="enableDarkMode()">Dark Mode</button>
-    <button onclick="enableLightMode()">Light Mode</button>
     
     <script>
       checkDarkMode();
