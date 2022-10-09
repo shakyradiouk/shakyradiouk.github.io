@@ -1,81 +1,81 @@
-<!DOCTYPE html>
+<!--
+  - Hey there!
+  - Remember its okay to look but:
+  - Don't copy. It's not nice, nor is it legal.
+  - Do not attempt to recreate or copy anything you see here 
+  - whether the code or the design without permission from dj keiran him self.
+  - This website was coded by djkeiran.co.uk
+  - Discord tag: DJKeiran#0001
+-->
+<!doctype html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShakingRadioUK</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta name="site_name" content="ShakingRadioUK">
+  <meta name="application-name" content="ShakingRadioUK" />
+  
+  <meta name="twitter:title" content="ShakingRadioUK">
+  <meta name="og:title" content="ShakingRadioUK">
+  <meta name="title" content="ShakingRadioUK">
+  <meta property="og:domain" content="http://shakingradio.co.uk/" />
+  <meta property="og:url" content="hhttp://shakingradio.co.uk/" />
+  <meta property="og:type" content="website" />
+  <meta property="author" content="djkeiran.co.uk">
+  <meta property="author" content="DJ Keiran">
+  <meta property="author" content="djkeiran.co.uk">
+  <meta property="og:author" content="djkeiran.co.uk">
+  <meta name="twitter:card" content="summary">
+</head>
 <body>
-<body>
-    <div id="app">
-      <button id="btn">Play Radio</button>
-      <button id="btn2">Pause Radio</button>
+  <div class="alert-box">
+    <span class="badge">Announcement</span> Make sure to join Shoreline Shopping today! (https://discord.gg/EQpmRbjN)
+  </div>  
+</body>
+<style>
+.alert-box {
+	background-color: #fffbcc;
+	color: #777;
+	font-size: 14px;
+	line-height: 23px;
+	padding: 13px 16px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.alert-box .badge {
+	background-color: #f58f2a;
+	border-radius: 3px;
+	color: #fff;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding: 3px 5px 3px 4px;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");.object-left-custom,[class~=object-left-custom-2],[class~=object-left-custom-7]{position:absolute;}.object-left-custom{top:26%;}.object-left-custom{left:5%;}[class~=object-left-custom-7]{top:42%;}*{-webkit-user-drag:none;}[class~=object-left-custom-7]{left:13%;}*{-khtml-user-drag:none;}[class~=object-left-custom-2]{top:43%;}[class~=object-left-custom-2]{left:26%;}*{-moz-user-drag:none;}[class~=object-left-custom-2]{font-family:"Inter";}[class~=object-left-custom-2]{font-weight:bold;}*{-o-user-drag:none;}*{-webkit-user-select:none;}*{-khtml-user-select:none;}*{-moz-user-select:none;}*{-o-user-select:none;}*{user-select:none;}
+</style>
+<body id="body" class="select-none transition-all bg-cover bg-center backdrop-blur-2xl bg-black backdrop-brightness-50" style="background-image: url(https://media.discordapp.net/attachments/1023729067188551681/1028693880037703690/shaky.png?width=416&height=393);">
+  <audio volume="0" class="stream">
+    <source src="http://stream.zeno.fm/8qumo8130edtv" />
+    </audio>
+  <div class="flex items-center h-screen">
+    <div>
+    <div class="flex items-center justify-center">
     </div>
-
-    <script src="src/index.js"></script>
-
+    <div class="flex object-left-custom items-center justify-center py-4">
+    <img id="cover" class="drop-shadow-xl rounded-2xl h-48 lg:h-64 transition-all">
+    </div>
+    <span class="text-white text-6xl object-left-custom-7 rounded-2xl audio-btn-play" style="z-index: 99" onclick="play()"><i class="audio-play fas fa-play"></i></span>
+    <div class="object-left-custom-2">
+    <h1 id="name" class="text-white text-4xl lg:text-5xl px-4 lg:px-0 text-center">Loading...</h1>
+    <h1 id="name2" class="text-white text-2xl lg:text-3xl px-4 lg:px-0 text-center">loading....</h1>
+    </div>
+  </div>
+  </div>
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
-
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-    <title>ShakyRadioUK</title>
-    <meta content="ShakyRadioUK" property="og:title" />
-    <meta content="Hiya! We are a new internet radio!!" property="og:description" />
-    <meta content="https://shakyradiouk.netlify.app" property="og:url" />
-    <meta content="https://shakyradiouk.netlify.app/favicon.ico" property="og:image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-    <style>
-	@media screen and (max-width: 481px){
-	  background: linear-gradient(90deg, rgba(152,64,90,1) 0%, rgba(120,185,33,1) 100%);
-	 }
-	background: linear-gradient(90deg, rgba(152,64,90,1) 0%, rgba(120,185,33,1) 100%);
-    </style>
-  </head>
-  <body>
-	<h4>Volume Slider Is Below, we are also taking song requests on our discord server! (https://discord.gg/BsXNyfTM)</h4>
-	<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
-    <h2>Click the play button above to start streaming Shake Radio</h2>
-  </body>
-</html>
-<script>
-fetch("https://superiorvitalhashmap.trobinson5.repl.co/txt")
-  .then(function (response) {
-	let responseText = response.text();
-	responseText = responseText + 2
-	document.getElementById("myspan").textContent=responseText;
-	console.log("got announcent")
-	console.log(responseText)
-  })
-const btn = document.getElementById("btn");
-const audio = new Audio(
-    "http://stream.zeno.fm/8qumo8130edtv"
-  );
-
-btn.onclick = () => {
-  audio.play();
-};
-
-btn2.onclick = () => {
-  audio.pause();
-};
-
-const body = document.querySelector("body");
-body.addEventListener("keypress", runEvent);
-
-
-let globalVolume = 1;
-window.SetVolume = function(val) {
-  console.log("Before: " + audio.volume);
-  audio.volume = val / 100;
-  globalVolume = audio.volume;
-  console.log("After: " + audio.volume);
-};
-function runEvent(e) {
-  const keyName = event.key;
-  const note = document.querySelector(`[data-sound-id="${keyName}"]`).play();
-
-  // alert("keypress event\n\n" + "key: " + keyName);
-  console.log(`EVENT TYPE: ${e.type}`);
-  console.log(e.target.value);
-  console.log(keyName);
-  heading.value = "";
-  heading.innerText = keyName;
-}
-</script>
